@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bash is confusing and this code is probably terrible :)
+
+cd /Users/tboose/Desktop/Fall\ Semester\ WSU\ 2024-25/Math\ 225/Homework
+if [[ $# -ne 1 ]]; then
+	echo "hw: Illegal number of parameters, only one parameter is allowed." >&2
+	exit 2
+fi
+mkdir "$1"
+cd "$1"
+git init
+echo "out/" > .gitignore
