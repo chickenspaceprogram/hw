@@ -3,10 +3,12 @@
 
 cd /Users/tboose/Desktop/Fall\ Semester\ WSU\ 2024-25/Math\ 225/Homework
 if [[ $# -ne 1 ]]; then
-	echo "hw: Illegal number of parameters, only one parameter is allowed." >&2
-	exit 2
+        echo "hw: Illegal number of parameters, only one parameter is allowed." >&2
+        exit 2
 fi
 mkdir "$1"
 cd "$1"
 git init
-echo "out/" > .gitignore
+printf "out/\n.DS_Store" > .gitignore
+code .
+touch "$1.tex"
