@@ -1,14 +1,33 @@
 #!/usr/bin/env bash
 # bash is confusing and this code is probably terrible :)
 
-cd /Users/tboose/Desktop/Fall\ Semester\ WSU\ 2024-25/Math\ 225/Homework
-if [[ $# -ne 1 ]]; then
-        echo "hw: Illegal number of parameters, only one parameter is allowed." >&2
-        exit 2
+if [ $1 = "--help" ] || [ $1 = "-h" ]
+then
+	printf "\nhw v1.2.0 - Created by Athena Boose <pestpestthechicken@yahoo.com>\n\n"
+	printf "usage: hw <path> <name>\n\n"
+	printf "hw is a script that speeds up the creation of assignments written in LaTeX.\n"
+	printf "It creates a directory with a git repo, .gitignore, and a .tex file.\n\n"
+	printf "Argument description:\npath: the place where you want the new directory to be\nname: the name of the new directory and the .tex file\n\n"
+	exit 0
 fi
-mkdir "$1"
+
+if [ $1 = "--version" ] || [ $1 = "-v" ]
+then
+	printf "\nhw v1.2.0 - Created by Athena Boose <pestpestthechicken@yahoo.com>\n"
+	printf "Enter --help for help.\n\n"
+	exit 0
+fi
+
+if [[ $# -ne 2 ]]; then
+	echo "hw: Illegal number of parameters, only one parameter is allowed." >&2
+	exit -1
+fi
+
+
 cd "$1"
+mkdir "$2"
+cd "$2"
 git init
 printf "out/\n.DS_Store" > .gitignore
 code .
-touch "$1.tex"
+touch "$2.tex"
