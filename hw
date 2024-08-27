@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bash is confusing and this code is probably terrible :)
 
-if [ $1 = "--help" ] || [ $1 = "-h" ]
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]
 then
 	printf "\nhw v1.2.0 - Created by Athena Boose <pestpestthechicken@yahoo.com>\n\n"
 	printf "usage: hw <path> <name>\n\n"
@@ -11,7 +11,7 @@ then
 	exit 0
 fi
 
-if [ $1 = "--version" ] || [ $1 = "-v" ]
+if [ "$1" = "--version" ] || [ "$1" = "-v" ]
 then
 	printf "\nhw v1.2.0 - Created by Athena Boose <pestpestthechicken@yahoo.com>\n"
 	printf "Enter --help for help.\n\n"
