@@ -19,7 +19,7 @@ then
 fi
 
 if [[ $# -ne 2 ]]; then
-	echo "hw: Illegal number of parameters, only one parameter is allowed." >&2
+	echo "hw: Illegal number of parameters, only two parameters are allowed." >&2
 	exit -1
 fi
 
